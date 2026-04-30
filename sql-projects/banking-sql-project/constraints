@@ -1,1 +1,53 @@
+-- PRIMARY KEYS
+
+ALTER TABLE customers
+ADD PRIMARY KEY (customer_id);
+
+ALTER TABLE accounts
+ADD PRIMARY KEY (account_id);
+
+ALTER TABLE cards
+ADD PRIMARY KEY (card_id);
+
+ALTER TABLE merchants
+ADD PRIMARY KEY (merchant_id);
+
+ALTER TABLE branches
+ADD PRIMARY KEY (branch_id);
+
+ALTER TABLE loans
+ADD PRIMARY KEY (loan_id);
+
+ALTER TABLE transactions
+ADD PRIMARY KEY (transaction_id);
+
+
+
+-- FOREIGN KEYS
+
+ALTER TABLE accounts
+ADD CONSTRAINT fk_key_customer_id_InAccounts
+FOREIGN KEY (customer_id)
+REFERENCES customers(customer_id);
+
+ALTER TABLE cards
+ADD CONSTRAINT fk_key_account_id_InCards
+FOREIGN KEY (account_id)
+REFERENCES accounts(account_id);
+
+ALTER TABLE loans
+ADD CONSTRAINT fk_key_customer_id_InLoans
+FOREIGN KEY (customer_id)
+REFERENCES customers(customer_id);
+
+ALTER TABLE transactions
+ADD CONSTRAINT fk_key_account_id_InTransactions
+FOREIGN KEY (account_id)
+REFERENCES accounts(account_id);
+
+ALTER TABLE transactions
+ADD CONSTRAINT fk_key_merchant_id_InTransactions
+FOREIGN KEY (merchant_id)
+REFERENCES merchants(merchant_id);
+
 
