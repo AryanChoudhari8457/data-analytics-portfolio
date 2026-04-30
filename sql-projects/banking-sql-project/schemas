@@ -1,1 +1,62 @@
 
+CREATE TABLE customers (
+    customer_id VARCHAR(20),
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(100),
+    city VARCHAR(100),
+    credit_score INT,
+    created_at DATE
+);
+
+CREATE TABLE accounts (
+    account_id VARCHAR(20),
+    customer_id VARCHAR(20),
+    account_type VARCHAR(20),
+    balance_usd NUMERIC(12,2),
+    open_date DATE
+);
+
+CREATE TABLE cards (
+    card_id VARCHAR(255),
+    account_id VARCHAR(255),
+    card_type VARCHAR(20),
+    expiration_date DATE
+);
+
+CREATE TABLE merchants (
+    merchant_id VARCHAR(20),
+    merchant_name VARCHAR(255),
+    city VARCHAR(100)
+);
+
+CREATE TABLE branches (
+    branch_id VARCHAR(20),
+    branch_name VARCHAR(255),
+    city VARCHAR(255),
+    country VARCHAR(255),
+	manager_name VARCHAR(255)
+);
+
+CREATE TABLE loans (
+    loan_id VARCHAR(20),
+    customer_id VARCHAR(255),
+    loan_amount NUMERIC(12,5),
+    interest_rate NUMERIC(5,2),
+    start_date DATE
+);
+
+CREATE TABLE transactions (
+    transaction_id VARCHAR(25),
+    account_id VARCHAR(20),
+    merchant_id VARCHAR(20),
+    amount_usd NUMERIC(12,2),
+    transaction_date TIMESTAMP
+);
+
+
+
+
+
+
+
