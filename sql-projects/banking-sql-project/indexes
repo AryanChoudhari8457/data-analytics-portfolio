@@ -1,1 +1,14 @@
+create index Transaction_Id_Index_InTransactions on Transactions(transaction_id)
+create index Account_Id_Index_InTransactions on Transactions(account_id)
+create index Merchant_Id_Index_InTransactions on Transactions(merchant_id)
+create index idx_txn_date on transactions(transaction_date);
+
+create index idx_customer_city on customers(city);
+create index idx_customer_score on customers(credit_score);
+
+create index idx_accounts_customer on accounts(customer_id);
+
+create index idx_cards_account on cards(account_id);
+
+create index idx_loans_customer on loans(customer_id);
 
